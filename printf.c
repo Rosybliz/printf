@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 			{
-				return (0);
+				return (-1);
 			}
 			if (*format == 's')
 			{
@@ -70,12 +70,6 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				my_argument++;
 			}
-			/*else if (*format == 'r')
-			{
-				char variadic3 = va_arg(argument_list, int);
-				write(1, variadic3, 1);
-				my_argument++;
-			}*/
 		}
 		format++;
 	}
