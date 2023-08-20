@@ -53,21 +53,7 @@ int _printf(const char *format, ...)
 					my_argument++;
 					break;
 				}
-				case 'd':
-				{
-					int variadic3 = va_arg(argument_list, int);
-					write(1, &variadic3, sizeof(int));
-					my_argument++;
-					break;
-				}
-				case 'i':
-				{
-					int variadic4 = va_arg(argument_list, int);
-					write(1, &variadic4, sizeof(int));
-					my_argument++;
-					break;
-				}
-			}
+		}
 			format++;
 		}
 		va_end(argument_list);
