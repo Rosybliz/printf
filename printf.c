@@ -7,7 +7,12 @@
  */
 int _printf(const char *format, ...)
 {
+	int i = 0;
+	int length = 0;
+	char size_str[39];
+	int digit_length =0;
 	int my_argument = 0;
+	int st_length = 0;
 	va_list argument_list;
 
 	va_start(argument_list, format);
@@ -29,11 +34,9 @@ int _printf(const char *format, ...)
 			}
 			if (*format == 's')
 			{
-				char size_str[39];
-				int i = 0;
-				int digit_length = 0;
+				/*int digit_length = 0;
 				int length = 0;
-				int st_length = 0;
+				int st_length = 0;*/
 				char *variadic2 = va_arg(argument_list, char*);
 
 				while (variadic2[st_length] != '\0')
