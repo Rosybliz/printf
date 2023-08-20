@@ -7,7 +7,6 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0;
 	int my_argument = 0;
 	va_list argument_list;
 
@@ -26,49 +25,38 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 			{
-				break;
+				va_end(argument_list);
+				return (-1);
 			}
-			if (*format == 's')
+			switch (*format)
 			{
-				char size_str[39];
-				int digit_length = 0;
-				int length = 0;
-				int st_length = 0;
-				char *variadic2 = va_arg(argument_list, char*);
-
-				while (variadic2[st_length] != '\0')
-					st_length++;
-				write(1, variadic2, st_length);
-				my_argument = my_argument + st_length;
-
-				/*char size_str[];*/
-				length = st_length;
-				/*int digit_length = 0;*/
-
-				while (length > 0)
+				case 's':
 				{
-					size_str[digit_length] = '0' + (length % 10);
-					length = length / 10;
-					digit_length++;
+					char *variadic2 = va_arg(argument_list, char*);
+					int st_length = 0;
+					while (variadic2[st_length] != '\0')
+						st_length++;
+					write(1, variadic2, st_length);
+					my_argument = my_argument + st_length;
+					break;
 				}
-
-				for (i = digit_length - 1; i > 0; i--)
+				case 'c':
 				{
-					write(1, &size_str[i], 1);
+					char variadic1 = va_arg(argument_list, int);
+					write(1, &variadic1, 1);
 					my_argument++;
+					break;
 				}
-			}
-			else if (*format == 'c')
-			{
-				char variadic1 = va_arg(argument_list, int);
-
-				write(1, &variadic1, 1);
-				my_argument++;
-			}
-			else if (*format == '%')
-			{
-				write(1, format, 1);
-				my_argument++;
+				case '%':
+				{
+					write(1, format, 1);
+					my_argument++;
+					break;
+				}
+				default:
+				{
+					break;
+				}
 			}
 		}
 		format++;
