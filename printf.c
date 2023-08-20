@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 				{
 					char *variadic2 = va_arg(argument_list, char*);
 					int st_length = 0;
+
 					while (variadic2[st_length] != '\0')
 						st_length++;
 					write(1, variadic2, st_length);
@@ -43,6 +44,7 @@ int _printf(const char *format, ...)
 				case 'c':
 				{
 					char variadic1 = va_arg(argument_list, int);
+
 					write(1, &variadic1, 1);
 					my_argument++;
 					break;
