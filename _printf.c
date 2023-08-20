@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
-				char variadic1 = va_arg(argument_list, int);
+				char variadic1 = (char)va_arg(argument_list, int);
 
 				write(1, &variadic1, 1);
 				my_argument++;
@@ -46,6 +46,12 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 			{
 				write(1, format, 1);
+				my_argument++;
+			}
+			else if (*format == 'd')
+			{
+				int variadic3 = va_arg(argument_list, int);
+				write(1, &variadic3, sizeof(int));			
 				my_argument++;
 			}
 		}
