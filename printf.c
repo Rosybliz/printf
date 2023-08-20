@@ -70,12 +70,12 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				my_argument++;
 			}
-			else if (*format == 'r')
+			/*else if (*format == 'r')
 			{
-				/*char variadic3 = va_arg(argument_list, int);*/
-				write(1, "%%r", 2);
-				my_argument += 2;
-			}
+				char variadic3 = va_arg(argument_list, int);
+				write(1, variadic3, 1);
+				my_argument++;
+			}*/
 		}
 		format++;
 	}
