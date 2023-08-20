@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 				while (variadic2[st_length] != '\0')
 				st_length++;
 				write(1, variadic2, st_length);
-				my_argument = my_argument + st_length
+				my_argument = my_argument + st_length;
 			}
 			else if (*format == 'c')
 			{
