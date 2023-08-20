@@ -54,12 +54,13 @@ int _printf(const char *format, ...)
 				{
 					break;
 				}
+			}
 		}
-			format++;
-		}
-		va_end(argument_list);
-	}
-	return (my_argument);
 
+		format++;
+
+	}
+	va_end(argument_list);
+	return (my_argument);
 }
 
