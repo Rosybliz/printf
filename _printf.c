@@ -24,19 +24,16 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == '\0')
-				break;
+				return (-1);
 
 			switch (*format)
 			{
 				case 's':
 				{
 					char *variadic2 = va_arg(argument_list, char*);
-					int st_length = 0;
 
-					while (variadic2[st_length] != '\0')
-					st_length++;
-					write(1, variadic2, st_length);
-					my_argument += st_length;
+					write(1, variadic2, strlen(variadic2));
+					my_argument += strlen(variadic2);
 					break;
 				}
 				case 'c':
@@ -51,6 +48,10 @@ int _printf(const char *format, ...)
 				{
 					write(1, format, 1);
 					my_argument++;
+					break;
+				}
+				default:
+				{
 					break;
 				}
 		}
