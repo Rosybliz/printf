@@ -44,4 +44,13 @@ int print_ptr(va_list my_specs, char my_buff,
 
 int _printf(const char *format, ...);
 
+
+
+/************MYFUNCS*************/
+int printCharacter(va_list my_specs, char myBuffer[],
+                int wid, int size, int prcs, int flg);
+int printString(va_list my_specs, char myBuffer[],
+                int wid, int size, int prcs, int flg);
+int printPercent(va_list my_specs, char myBuffer[],
+                int wid, int size, int prcs, int flg);
 #endif
