@@ -69,6 +69,27 @@ int printString(va_list my_specs, char myBuffer[],
                 int wid, int size, int prcs, int flg);
 int printPercent(va_list my_specs, char myBuffer[],
 		int wid, int size, int prcs, int flg);
+/**
+ * struct fptr - The structure
+ * @fptr: format in this case
+ * @fn: The asscociated function
+ */
+struct fptr
+{
+	char fptr;
+	int(*fn)(va_list, char [], int, int, int, int);
+}
+
+/**
+ * typedef struct fptr fptr_t - The structure
+ * @fptr: The format
+ * @fptr_t: function Associated 
+ */
+typedef struct fptr fptr_t;
+int _printf(const char *format, ...);
+int modify_print(const char *fptr, int *x,
+		va_list my_argument, char myBuffer, int flg, int prcs, int wid, int size);
+
 
 /************MODIFIEDPRINT********************/
 int modify_print(const char *fptr, int mnd, va_list my_argument,

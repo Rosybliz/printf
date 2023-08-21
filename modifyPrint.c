@@ -30,7 +30,7 @@ int modify_print(const char *fptr, int mnd, va_list my_argument,
 	{
 		if (fptr[*mnd] == fptr_types[x].fptr)
 		{
-			return (fptr_types[x].fptr(my_argument, myBuffer,
+			return (fptr_types[x].fn(my_argument, myBuffer,
 						flg, wid, prcs, size));
 		}
 	if (fptr_types[x].fptr == '\0')
