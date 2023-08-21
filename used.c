@@ -16,3 +16,13 @@ long int size_numb(long int numb, int size)
 		return ((short)numb);
 	return ((int)numb);
 }
+/**
+ * my_digit - confirms if the character to be printed is digit
+ * @A: The character to be checked
+ * Return: return 0 on Success
+ */
+int my_digit(char A)
+{
+	if (A <= '9' && A >= '0')
+		return (0);
+}
