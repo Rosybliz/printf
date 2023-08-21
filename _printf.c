@@ -1,4 +1,6 @@
 #include "main.h"
+
+void printBuffer(char myBuffer[], int *my_buff);
 /**
  * _printf-  function that produces an output according to the
  * printf format

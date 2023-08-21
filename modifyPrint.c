@@ -43,5 +43,7 @@ int modify_print(const char *fptr, int mnd, va_list my_argument,
 		return (1);
 	}
 	fin_len += write(1, &fptr[*mnd], 1);
+	return (fin_len);
+	}
 	return (my_chars);
-
+}

@@ -68,5 +68,17 @@ int printCharacter(va_list my_specs, char myBuffer[],
 int printString(va_list my_specs, char myBuffer[],
                 int wid, int size, int prcs, int flg);
 int printPercent(va_list my_specs, char myBuffer[],
-                int wid, int size, int prcs, int flg);
+		int wid, int size, int prcs, int flg);
+
+/************MODIFIEDPRINT********************/
+int modify_print(const char *fptr, int mnd, va_list my_argument,
+                char myBuffer[], int flg, int prcs, int size, int wid);
+void printBuffer(char myBuffer[], int *my_buff);
+
+/************Functions to take specifiers***************/
+int print_flgs(const char *format, int *x);
+int print_prcs(const char *format, int *x, va_list my_arguments);
+int print_size(const char *format, int *x);
+
+
 #endif
