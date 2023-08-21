@@ -12,6 +12,8 @@
 #define ADD 2
 #define BIGSIZE 2
 #define SMALLSIZE 1
+#define (void)(x)
+#define SPACE 16
 /********* WRITES*************/
 
 int write_char(int c, char my_buff[], int flg,
@@ -41,6 +43,20 @@ int print_rotstring(va_list my_specs, char my_buff, int size,
 		int prcs, int wid, int flg);
 int print_ptr(va_list my_specs, char my_buff,
 		int size, int wid, int prcs, int flg);
+/***************FUNC***************/
+int printCharacter(va_list my_specs, char myBuffer[],
+		int wid, int size, int prcs, int flg);
+int printString(va_list my_specs, char myBuffer[],
+		int wid, int size, int prcs, int flg);
+int printPercent(va_list my_specs, char myBuffer[],
+		int wid, int size, int prcs, int flg);
+int print_flgs(const char *format, int *x);
+int print_size(const char *format, int *x);
+int print_width(const char *format, int *x, va_list my_argument);
+int print_prcs(const char *format, int *x, va_list my_arguments);
+int int_print(va_list my_specs, char my_buff[],
+		int wid, int size, int flg, int prcs);
+
 
 int _printf(const char *format, ...);
 
