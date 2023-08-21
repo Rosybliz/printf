@@ -79,6 +79,6 @@ void printBuffer(char myBuffer[], int *my_buff);
 int print_flgs(const char *format, int *x);
 int print_prcs(const char *format, int *x, va_list my_arguments);
 int print_size(const char *format, int *x);
-
+int print_width(const char *format, int *x, va_list my_argument);
 
 #endif
