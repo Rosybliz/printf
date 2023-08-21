@@ -18,7 +18,12 @@ int modify_print(const char *fptr, int mnd, va_list my_argument,
 	int my_chars = -1;
 
 	fptr_t fptr_types[] = {
-		{'c', printCharacter}, {'s', printString}, {'%', printPercent}
+		{'c', printCharacter}, {'s', printString}, {'%', printPercent},
+		{'i', printInt}, {'d', printInt}, {'b', printBinary},
+		{'u', printUnsigned}, {'o', printOctal}, {'x', printHexa},
+		{'X', printHexaUpper}, {'p', printPointer}, {'S', printUnprin},
+
+		['r', printReverse}, {'R', printRot13string}, {'\0', NULL},
 
 	};
 	for (x = 0; fptr_types[x].fptr != '\0'; x++)
