@@ -149,7 +149,7 @@ int write_unsignd(int is_neg, int pnd, char my_buff[], int flg,
  * Return: the number of characters printed
  */
 int write_ptr(char my_buff[], int pnd, int len,
-		int wid, int flg,char bar, char xtraC, int bar_start)
+		int wid, int flg, char bar, char xtraC, int bar_start)
 {
 	int x;
 
@@ -214,7 +214,7 @@ int write_char(int c, char my_buff[], int flg,
 	if (flg & ZERO)
 		bar = '0';
 	my_buff[x++] = c;
-	my_buff[x++] ='\0';
+	my_buff[x++] = '\0';
 
 	if (wid > 1)
 	{

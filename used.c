@@ -24,7 +24,7 @@ long int size_numb(long int numb, int size)
 int my_digit(char A)
 {
 	if (A <= '9' && A >= '0')
-		return(1);
+		return (1);
 	return (0);
 }
 /**

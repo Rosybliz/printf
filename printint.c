@@ -77,8 +77,9 @@ int printBinary(va_list my_specs, char my_buff[],
 	{
 		sum = sum + b[x];
 		if (sum || x == 31)
-		{ 
+		{
 			char y = '0' + b[x];
+
 			write(1, &y, 1);
 			count++;
 		}

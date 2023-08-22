@@ -10,8 +10,8 @@
  * @size: the size
  * Return: number of characters printed
  */
-int printUnsigned(va_list my_specs, char my_buff[], int flg, int size, int prcs,
-		int wid)
+int printUnsigned(va_list my_specs, char my_buff[], int flg, int wid,
+		int prcs, int size)
 {
 	int x = BUFF_SIZE - 2;
 	unsigned long int numb = va_arg(my_specs, unsigned long int);
@@ -39,8 +39,8 @@ int printUnsigned(va_list my_specs, char my_buff[], int flg, int size, int prcs,
  * @size: the size
  * Return: number of characters printed
  */
-int printOctal(va_list my_specs, char my_buff[], int flg, int size, int prcs,
-		int wid)
+int printOctal(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
+		int size)
 {
 	int x = BUFF_SIZE - 2;
 	unsigned long int numb = va_arg(my_specs, unsigned long int);
@@ -71,8 +71,8 @@ int printOctal(va_list my_specs, char my_buff[], int flg, int size, int prcs,
  * @size: the size
  * Return: number of characters printed
  */
-int printHexa(va_list my_specs, char my_buff[], int flg, int size, int prcs,
-		int wid)
+int printHexa(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
+		int size)
 {
 	return (print_hexa(my_specs, "0123456789abcdef", my_buff, flg, 'x',
 				wid, prcs, size));
@@ -88,8 +88,8 @@ int printHexa(va_list my_specs, char my_buff[], int flg, int size, int prcs,
  * @size: the size
  * Return: number of characters printed
  */
-int printHexaUp(va_list my_specs, char my_buff[], int flg, int size, int prcs,
-		int wid)
+int printHexaUp(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
+		int size)
 {
 	return (print_hexa(my_specs, "0123456789ABCDEF", my_buff, flg, 'X',
 				wid, prcs, size));

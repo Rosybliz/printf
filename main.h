@@ -99,17 +99,17 @@ int modify_print(const char *fptr, int x, va_list my_argument,
 
 /************MODIFIEDPRINT********************/
 void printBuffer(char myBuffer[], int *my_buff);
-int printUnsigned(va_list my_specs, char my_buff[], int flg, int size,
-		int prcs, int wid);
+int printUnsigned(va_list my_specs, char my_buff[], int flg, int wid,
+		int prcs, int size);
 
 int print_hexa(va_list my_specs, char map[],char my_buff[], int flg,
 		char flg_c, int wid, int prcs, int size);
-int printHexaUp(va_list my_specs, char my_buff[], int flg, int size, int prcs,
-		int wid);
-int printOctal(va_list my_specs, char my_buff[], int flg, int size, int prcs,
-		int wid);
-int printHexa(va_list my_specs, char my_buff[], int flg, int size, int prcs,
-		int wid);
+int printHexaUp(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
+		int size);
+int printOctal(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
+		int size);
+int printHexa(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
+		int size);
 
 
 #endif
