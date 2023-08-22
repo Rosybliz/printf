@@ -222,7 +222,8 @@ int write_char(char c, char my_buff[], int flg,
 		for (; x < wid - 1; x++)
 			my_buff[BUFF_SIZE - x - 2] = bar;
 		if (flg & SUB)
-			return (write(1, &my_buff[BUFF_SIZE - x - 1], wid - 1));
+			return (write(1, &my_buff[0], 1) +
+					write(1, &my_buff[BUFF_SIZE - x - 1], wid - 1));
 		else
 			return(write(1, &my_buff[BUFF_SIZE - x - 1], wid - 1) +
 					write(1, &my_buff[0], 1));

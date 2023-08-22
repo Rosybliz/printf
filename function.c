@@ -51,6 +51,7 @@ int printOctal(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
 	numb = size_unsignd(numb, size);
 	if (numb == 0)
 		my_buff[x--] = '0';
+	my_buff[BUFF_SIZE - 1] = '\0';
 	while (numb > 0)
 	{
 		my_buff[x--] = (numb % 8) + '0';
