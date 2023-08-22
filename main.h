@@ -51,8 +51,6 @@ int printString(va_list my_specs, char myBuffer[],
 		int wid, int size, int prcs, int flg);
 int printPercent(va_list my_specs, char myBuffer[],
 		int wid, int size, int prcs, int flg);
-int printCharacter(va_list my_specs, char myBuffer[],
-                char* wid, int size, int prcs, int flg);
 
 
 int print_flgs(const char *format, int *x);
@@ -68,8 +66,8 @@ int _printf(const char *format, ...);
 
 
 /************MYFUNCS*************/
-/*int printCharacter(va_list my_specs, char myBuffer[],
-		int wid, int size, int prcs, int flg);*/
+int printCharacter(va_list my_specs, char myBuffer[],
+		int wid, int size, int prcs, int flg);
 int printString(va_list my_specs, char myBuffer[],
 		int wid, int size, int prcs, int flg);
 int printPercent(va_list my_specs, char myBuffer[],
