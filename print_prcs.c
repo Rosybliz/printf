@@ -24,7 +24,7 @@ int print_prcs(const char *format, int *x, va_list my_arguments)
 		else if (format[y] == '*')
 		{
 			y++;
-			prcs = va_arg(my_argument, int);
+			prcs = va_arg(my_arguments, int);
 			break;
 		}
 		else

@@ -38,7 +38,7 @@ int print_ptr(va_list my_specs, char my_buff[],
 	else if (flg & SPACE)
 		xtraC = ' ', len++;
 	pnd++;
-	return (write_ptr(my_buff[], pnd, len, bar, wid, bar, xtraC, bar_start));
+	return (write_ptr(my_buff, pnd, len, bar, wid, bar, xtraC, bar_start));
 }
 
 /**

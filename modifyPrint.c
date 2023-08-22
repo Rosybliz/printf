@@ -19,9 +19,9 @@ int modify_print(const char *fptr, int mnd, va_list my_argument,
 
 	fptr_t fptr_types[] = {
 		{'c', printCharacter}, {'s', printString}, {'%', printPercent},
-		{'i', intprint}, {'d', intprint}, {'b', printBinary},
+		{'i', int_print}, {'d', int_print}, {'b', printBinary},
 		{'u', printUnsigned}, {'o', printOctal}, {'x', printHexa},
-		{'X', printHexaUper}, {'p', print_ptr}, {'S', print_unprintable},
+		{'X', printHexaUp}, {'p', print_ptr}, {'S', print_unprintable},
 
 		['r', print_reverse}, {'R', print_rotstring}, {'\0', NULL},
 

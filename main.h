@@ -9,6 +9,7 @@
 #define BUFF_SIZE 1024
 #define  SUB 1
 #define ZERO 4
+#define P_HASH 8
 #define ADD 2
 #define BIGSIZE 2
 #define SMALLSIZE 1
@@ -64,9 +65,9 @@ int _printf(const char *format, ...);
 
 /************MYFUNCS*************/
 int printCharacter(va_list my_specs, char myBuffer[],
-                int wid, int size, int prcs, int flg);
+		int wid, int size, int prcs, int flg);
 int printString(va_list my_specs, char myBuffer[],
-                int wid, int size, int prcs, int flg);
+		int wid, int size, int prcs, int flg);
 int printPercent(va_list my_specs, char myBuffer[],
 		int wid, int size, int prcs, int flg);
 /**
@@ -83,17 +84,27 @@ struct fptr
 /**
  * typedef struct fptr fptr_t - The structure
  * @fptr: The format
- * @fptr_t: function Associated 
+ * @fptr_t: function Associated
  */
 typedef struct fptr fptr_t;
 
 int _printf(const char *format, ...);
-int modify_print(const char *fptr, int mnd:, va_list my_argument,
+int modify_print(const char *fptr, int mnd, va_list my_argument,
 		char myBuffer[], int flg, int prcs, int wid, int size);
 
 
 /************MODIFIEDPRINT********************/
 void printBuffer(char myBuffer[], int *my_buff);
+int printUnsigned(va_list my_specs, char my_buff[], int flg, int size,
+		int prcs,int wid);
+int print_hexa(va_list my_specs, char my_buff[], char map[], char flg_c,
+		int flg,int size, int prcs, int wid);
+int printHexaUp(va_list my_specs, char my_buff[], int flg, int size, int prcs,
+		int wid);
+int printOctal(va_list my_specs, char my_buff[], int flg, int size, int prcs,
+		int wid);
+int printHexa(va_list my_specs, char my_buff[], int flg, int size, int prcs,
+		int wid);
 
 
 #endif

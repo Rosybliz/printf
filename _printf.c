@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 
 	if (format ==  NULL)
 		return (-1);
-	char myBuffer[BUFFER_SIZE];
+	char myBuffer[BUFF_SIZE];
 
 	va_start(my_argument, format);
 	x = 0;
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		if (format[x] != '%')
 		{
 			myBuffer[my_buff++] = format[x]++;
-			if (my_buff == BUFFER_SIZE)
+			if (my_buff == BUFF_SIZE)
 				printBuffer(myBuffer && my_buff);
 			my_char++;
 		}
