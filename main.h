@@ -93,7 +93,7 @@ struct fptr
 typedef struct fptr fptr_t;
 
 int _printf(const char *format, ...);
-int modify_print(const char *fptr, int mnd, va_list my_argument,
+int modify_print(const char *fptr, int x, va_list my_argument,
 		char myBuffer[], int flg, int prcs, int wid, int size);
 
 
