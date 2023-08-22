@@ -28,13 +28,13 @@ int my_digit(char A)
 	return (0);
 }
 /**
- * size_unsigned- a function that casts a number to a size
+ * size_unsignd- a function that casts a number to a size
  * @numb: the number
  * @size: the size
  * Return: the new size
  */
 
-long int size_unsigned(unsigned long int numb,  int size)
+long int size_unsignd(unsigned long int numb,  int size)
 {
 	if (size == SMALLSIZE)
 		return ((unsigned short)numb);

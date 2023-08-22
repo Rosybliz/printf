@@ -16,7 +16,7 @@ int printUnsigned(va_list my_specs, char my_buff[], int flg, int size, int prcs,
 	int x = BUFF_SIZE - 2;
 	unsigned long int numb = va_arg(my_specs, unsigned long int);
 
-	numb = size_unsigned(numb, size);
+	numb = size_unsignd(numb, size);
 
 	if (numb == 0)
 		my_buff[x--] = '0';
@@ -27,7 +27,7 @@ int printUnsigned(va_list my_specs, char my_buff[], int flg, int size, int prcs,
 		numb /= 10;
 	}
 	x++;
-	return (write_unsigned(0, x, my_buff, flg, wid, prcs, size));
+	return (write_unsignd(0, x, my_buff, flg, wid, prcs, size));
 }
 /**
  * printOctal- a function that prints a base 8 number
@@ -48,7 +48,7 @@ int printOctal(va_list my_specs, char my_buff[], int flg, int size, int prcs,
 
 	UNUSED(wid);
 
-	numb = size_unsigned(numb, size);
+	numb = size_unsignd(numb, size);
 	if (numb == 0)
 		my_buff[x--] = '0';
 	while (numb > 0)
@@ -59,7 +59,7 @@ int printOctal(va_list my_specs, char my_buff[], int flg, int size, int prcs,
 	if (flg & P_HASH && i_numb != 0)
 		my_buff[x--] = '0';
 	x++;
-	return (write_unsigned(0, x, my_buff, flg, wid, prcs, size));
+	return (write_unsignd(0, x, my_buff, flg, wid, prcs, size));
 }
 /**
  * printHexa- a function that prints an unsigned number in hexadecimal
@@ -116,7 +116,7 @@ int print_hexa(va_list my_specs, char map[], char my_buff[], int flg,
 
 	UNUSED(wid);
 
-	numb = size_unsigned(numb, size);
+	numb = size_unsignd(numb, size);
 
 	if (numb == 0)
 		my_buff[x--] = '0';
@@ -132,5 +132,5 @@ int print_hexa(va_list my_specs, char map[], char my_buff[], int flg,
 		my_buff[x--] = '0';
 	}
 	x++;
-	return (write_unsigned(0, 1, my_buff, flg, wid, prcs, size));
+	return (write_unsignd(0, 1, my_buff, flg, wid, prcs, size));
 }

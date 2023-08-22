@@ -19,7 +19,7 @@
 
 int write_char(int c, char my_buff[], int flg,
 		int prcs, int size, int wid);
-int write_unsigned(int is_neg, int pnd, char my_buff[], int flg,
+int write_unsignd(int is_neg, int pnd, char my_buff[], int flg,
 		int prcs, int wid, int size);
 int write_numb(int pnd, char my_buff[], int flg,
 		int prcs, int len, char xtraC, char bar, int wid);
@@ -31,7 +31,7 @@ int write_ptr(char my_buff[], int pnd, int len, int wid, int flg, char bar,
 int my_digit(char A);
 long int size_numb(long int numb, int size);
 int put_hexa(char ascii, char my_buff[], int x);
-long int size_unsigned(unsigned long int numb,  int size);
+long int size_unsignd(unsigned long int numb,  int size);
 int is_print(char c);
 
 /**************PRINTALL***********/

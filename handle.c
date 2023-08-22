@@ -88,7 +88,7 @@ int write_numb(int pnd, char my_buff[], int flg,
 }
 
 /**
- * write_unsigned- this function prints an unsigned number
+ * write_unsignd- this function prints an unsigned number
  * @is_neg: argument list
  * @my_buff: an array of characters
  * @wid: width
@@ -98,7 +98,7 @@ int write_numb(int pnd, char my_buff[], int flg,
  * @pnd: index
  * Return: number of printed characters
  */
-int write_unsigned(int is_neg, int pnd, char my_buff[], int flg,
+int write_unsignd(int is_neg, int pnd, char my_buff[], int flg,
 		int prcs, int wid, int size)
 {
 	int len = BUFF_SIZE - pnd - 1, x = 0;
