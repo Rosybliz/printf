@@ -14,12 +14,16 @@
 int modify_print(const char *fptr, int mnd, va_list my_argument,
 		char myBuffer[], int flg, int prcs, int size, int wid)
 {
+	int x, fin_len = 0;
+	int my_chars = -1;
+	/**
 	UNUSED(my_argument);
 	UNUSED(myBuffer);
 	UNUSED(flg);
 	UNUSED(prcs);
 	UNUSED(size);
 	UNUSED(wid);
+	*/
 	/*int x, fin_len = 0;*/
 	/*int my_chars = -1;*/
 
@@ -31,8 +35,8 @@ int modify_print(const char *fptr, int mnd, va_list my_argument,
 
 		{'r', print_reverse}, {'R', print_rotstring}, {'\0', NULL}
 	};
-	int x = 0;
-	int fin_len =0;
+	/*int x = 0;*/
+	/*int fin_len =0;*/
 
 	for (x = 0; fptr_types[x].fptr != '\0'; x++)
 		if (fptr[mnd] == fptr_types[x].fptr)
@@ -59,5 +63,5 @@ int modify_print(const char *fptr, int mnd, va_list my_argument,
 		fin_len += write(1, &fptr[mnd], 1);
 		return (fin_len);
 	}
-	return (0);
+	return (my_chars);
 }
