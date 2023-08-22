@@ -24,7 +24,8 @@ long int size_numb(long int numb, int size)
 int my_digit(char A)
 {
 	if (A <= '9' && A >= '0')
-		return (0);
+		return(1);
+	return (0);
 }
 /**
  * size_unsigned- a function that casts a number to a size
@@ -39,7 +40,7 @@ long int size_unsigned(unsigned long int numb,  int size)
 		return ((unsigned short)numb);
 	else if (size == BIGSIZE)
 		return (numb);
-	return ((unsigned int)num);
+	return ((unsigned int)numb);
 }
 
 /**
@@ -49,7 +50,7 @@ long int size_unsigned(unsigned long int numb,  int size)
  * @x: index
  * Return: 3
  */
-int put_hexa(char ascii, char my_buff, int x)
+int put_hexa(char ascii, char my_buff[], int x)
 {
 	char map[] = "0123456789ABCDEF";
 

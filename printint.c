@@ -17,14 +17,14 @@ int int_print(va_list my_specs, char my_buff[],
 	int x = BUFF_SIZE - 2;
 	int is_neg = 0;
 	unsigned long int numb;
-	long int y = va_args(my_specs, long int);
+	long int y = va_arg(my_specs, long int);
 
 	y = size_numb(y, size);
 
 	if (y == 0)
 		my_buff[x--] = '0';
 	my_buff[BUFF_SIZE - 1] = '\0';
-	num = (unsigned long int)y;
+	numb = (unsigned long int)y;
 
 	if (y < 0)
 	{

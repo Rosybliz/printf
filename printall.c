@@ -9,7 +9,7 @@
  * @size: the size
  * Return: returns number of characters printed
  */
-int print_ptr(va_list my_specs, char my_buff,
+int print_ptr(va_list my_specs, char my_buff[],
 		int size, int wid, int prcs, int flg)
 {
 	char xtraC = 0, bar = ' ';
@@ -18,9 +18,9 @@ int print_ptr(va_list my_specs, char my_buff,
 	char map[] = "0123456789abcdef";
 	unsigned long num_a;
 
-	void(wid);
-	void(size);
-	void(prcs);
+	UNUSED(wid);
+	UNUSED(size);
+	UNUSED(prcs);
 	if (address == NULL)
 		return (write(1, "(nil)", 5));
 	my_buff[BUFF_SIZE - 1] = '\0';
@@ -38,7 +38,7 @@ int print_ptr(va_list my_specs, char my_buff,
 	else if (flg & SPACE)
 		xtraC = ' ', len++;
 	pnd++;
-	return (write_ptr(my_buff, pnd, len, wid, bar, xtraC, bar_start));
+	return (write_ptr(my_buff[], pnd, len, bar, wid, bar, xtraC, bar_start));
 }
 
 /**
@@ -51,7 +51,7 @@ int print_ptr(va_list my_specs, char my_buff,
  * @size: the size
  * Return: returns number of characters printed
  */
-int print_rotstring(va_list my_specs, char my_buff, int size,
+int print_rotstring(va_list my_specs, char my_buff[], int size,
 		int prcs, int wid, int flg)
 {
 	char i;
@@ -63,11 +63,11 @@ int print_rotstring(va_list my_specs, char my_buff, int size,
 
 	str = va_arg(my_specs, char *);
 
-	void(flg);
-	void(my_buff);
-	void(prcs);
-	void(size);
-	void(wid);
+	UNUSED(flg);
+	UNUSED(my_buff);
+	UNUSED(prcs);
+	UNUSED(size);
+	UNUSED(wid);
 
 	if (str == NULL)
 		str = "(AHYY)";
@@ -104,23 +104,23 @@ int print_rotstring(va_list my_specs, char my_buff, int size,
  * @size: the size
  * Return: returns number of characters printed
  */
-int print_reverse(va_list my_specs, char my_buff, int flg,
+int print_reverse(va_list my_specs, char my_buff[], int flg,
 		int prcs, int wid, int size)
 {
 	char *str;
 	int x;
 	int count = 0;
 
-	void(size);
-	void(flg);
-	void(wid);
-	void(my_buff);
+	UNUSED(size);
+	UNUSED(flg);
+	UNUSED(wid);
+	UNUSED(my_buff);
 
 	str = va_arg(my_specs, char *);
 
 	if (str == NULL)
 	{
-		void(prcs);
+		UNUSED(prcs);
 
 		str = ")Null(";
 	}
@@ -145,16 +145,16 @@ int print_reverse(va_list my_specs, char my_buff, int flg,
  * @size: the size
  * Return: returns number of characters printed
  */
-int print_unprintable(va_list my_specs, char my_buff,
+int print_unprintable(va_list my_specs, char my_buff[],
 		int flg, int prcs, int wid, int size)
 {
 	int x = 0, offset = 0;
-	char *str = va_args(my_specs, char *);
+	char *str = va_arg(my_specs, char *);
 
-	void(prcs);
-	void(flg);
-	void(size);
-	void(wid);
+	UNUSED(prcs);
+	UNUSED(flg);
+	UNUSED(size);
+	UNUSED(wid);
 
 	if (str == NULL)
 		return (write(1, "(null)", 6));
@@ -163,11 +163,11 @@ int print_unprintable(va_list my_specs, char my_buff,
 		if (is_print(str[x]))
 			my_buff[x + offset] = str[x];
 		else
-			offsef = offset + put_hexa(str[x], my_buff,
+			offset = offset + put_hexa(str[x], my_buff,
 					x + offset);
 		x++;
 	}
-	my_buffer[x + offset] = '\0';
+	my_buff[x + offset] = '\0';
 	return (write(1, my_buff, x + offset));
 }
 

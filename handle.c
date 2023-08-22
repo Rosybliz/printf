@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * write_no- this function prints a string
  * @is_neg: argument list
@@ -14,7 +15,7 @@ int write_no(int is_neg, int pnd, char my_buff[], int flg,
 	int len = BUFF_SIZE - pnd - 1;
 	char bar = ' ', xtraC = 0;
 
-	void(size);
+	UNUSED(size);
 	if ((flg & ZERO) && !(flg & SUB))
 		bar = '0';
 	if (is_neg)
@@ -22,7 +23,7 @@ int write_no(int is_neg, int pnd, char my_buff[], int flg,
 	else if (flg & ADD)
 		xtraC = '+';
 	else if (flg & SPACE)
-		xtrC = ' ';
+		xtraC = ' ';
 	return (write_numb(pnd, my_buff, flg, prcs, wid, len,
 			bar, xtraC));
 }
@@ -48,15 +49,15 @@ int write_numb(int pnd, char my_buff[], int flg,
 		return (0);
 	if (prcs == 0 && pnd == BUFF_SIZE - 2 && my_buff[pnd] == '0')
 	       my_buff[pnd] = bar = ' ';
-	if (prcs > 0 && prc < len)
+	if (prcs > 0 && prcs < len)
 		bar = ' ';
-	while (prcs > length)
+	while (prcs > len)
 		my_buff[--pnd] = '0', len++;
 	if (xtraC != 0)
 		len++;
 	if (wid > len)
 	{
-		for (x = 1; x < (wid - (len + 1)); i++)
+		for (x = 1; x < (wid - (len + 1)); x++)
 			my_buff[x] = bar;
 		my_buff[x] = '\0';
 		if (flg & SUB && bar == ' ')
@@ -97,14 +98,14 @@ int write_numb(int pnd, char my_buff[], int flg,
  * @pnd: index
  * Return: number of printed characters
  */
-int write_unsigned(int is_neg, int pnd, char my_buff, int flg,
+int write_unsigned(int is_neg, int pnd, char my_buff[], int flg,
 		int prcs, int wid, int size)
 {
 	int len = BUFF_SIZE - pnd - 1, x = 0;
 	char bar = ' ';
 
-	void (is_neg);
-	void (size);
+	UNUSED(is_neg);
+	UNUSED(size);
 
 	if (prcs == 0 && pnd == BUFF_SIZE - 2 && my_buff[pnd] == '0')
 		return (0);
@@ -119,7 +120,7 @@ int write_unsigned(int is_neg, int pnd, char my_buff, int flg,
 		bar = '0';
 	if (wid > len)
 	{
-		for (x = 0; x < wid - length; x++)
+		for (x = 0; x < wid - len; x++)
 			my_buff[x] = bar;
 		my_buff[x] = '\0';
 		if (flg & SUB)
@@ -207,11 +208,14 @@ int write_char(int c, char my_buff[], int flg,
 	int x = 0;
 	char bar = ' ';
 
-	void(prcs);
-	voide(size);
+	UNUSED(prcs);
+	UNUSED(size);
 
 	if (flg & ZERO)
 		bar = '0';
+	my_buff[x++] = c;
+	my_buff[x++] ='\0';
+
 	if (wid > 1)
 	{
 		my_buff[BUFF_SIZE - 1] = '\0';
@@ -220,7 +224,7 @@ int write_char(int c, char my_buff[], int flg,
 		if (flg & SUB)
 			return (write(1, &my_buff[BUFF_SIZE - x - 1], wid - 1));
 		else
-			return(write(, &my_buff[BUFF_SIZE - x - 1], wid - 1) +
+			return(write(1, &my_buff[BUFF_SIZE - x - 1], wid - 1) +
 					write(1, &my_buff[0], 1));
 	}
 	return (write(1, &my_buff[0], 1));

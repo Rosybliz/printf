@@ -19,11 +19,11 @@ int modify_print(const char *fptr, int mnd, va_list my_argument,
 
 	fptr_t fptr_types[] = {
 		{'c', printCharacter}, {'s', printString}, {'%', printPercent},
-		{'i', printInt}, {'d', printInt}, {'b', printBinary},
+		{'i', intprint}, {'d', intprint}, {'b', printBinary},
 		{'u', printUnsigned}, {'o', printOctal}, {'x', printHexa},
-		{'X', printHexaUpper}, {'p', printPointer}, {'S', printUnprin},
+		{'X', printHexaUper}, {'p', print_ptr}, {'S', print_unprintable},
 
-		['r', printReverse}, {'R', printRot13string}, {'\0', NULL},
+		['r', print_reverse}, {'R', print_rotstring}, {'\0', NULL},
 
 	};
 	for (x = 0; fptr_types[x].fptr != '\0'; x++)
@@ -34,7 +34,9 @@ int modify_print(const char *fptr, int mnd, va_list my_argument,
 						flg, wid, prcs, size));
 		}
 	if (fptr_types[x].fptr == '\0')
-		return (-1);
+	{
+		if(fptr[*mnd] == '\0')
+			return (-1);
 	fin_len += write(1, "%%", 1);
 	if (fptr[*mnd - 1] == ' ')
 		fin_len += write(1, " ", 1);
