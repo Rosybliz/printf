@@ -74,7 +74,7 @@ int printOctal(va_list my_specs, char my_buff[], int flg, int size, int prcs,
 int printHexa(va_list my_specs, char my_buff[], int flg, int size, int prcs,
 		int wid)
 {
-	return (print_hexa(my_specs, "0123456789abcdef" my_buff, flg, 'X',
+	return (print_hexa(my_specs, "0123456789abcdef", my_buff, flg, 'x',
 				wid, prcs, size));
 }
 /**
@@ -107,8 +107,8 @@ int printHexaUp(va_list my_specs, char my_buff[], int flg, int size, int prcs,
  * @map: the --
  * Return: number of characters printed
  */
-int print_hexa(va_list my_specs, char my_buff[], char flg_c, char map[],
-		int flg, int size, int prcs, int wid)
+int print_hexa(va_list my_specs, char map[], char my_buff[], int flg,
+		char flg_c, int wid, int prcs, int size)
 {
 	int x = BUFF_SIZE - 2;
 	unsigned long int numb = va_arg(my_specs, unsigned long int);
@@ -124,7 +124,7 @@ int print_hexa(va_list my_specs, char my_buff[], char flg_c, char map[],
 	while (numb > 0)
 	{
 		my_buff[x--] = map[numb % 16];
-		num /= 16;
+		numb /= 16;
 	}
 	if (flg & P_HASH && i_numb != 0)
 	{

@@ -19,14 +19,14 @@
 
 int write_char(int c, char my_buff[], int flg,
 		int prcs, int size, int wid);
-int write_ptr(int pnd, char my_buff[], int flg,
-		int len, char xtraC, char bar, int bar_start, int wid);
 int write_unsigned(int is_neg, int pnd, char my_buff[], int flg,
 		int prcs, int wid, int size);
 int write_numb(int pnd, char my_buff[], int flg,
 		int prcs, int len, char xtraC, char bar, int wid);
 int write_no(int is_neg, int pnd, char my_buff[], int flg,
 		int prcs, int size, int wid);
+int write_ptr(char my_buff[], int pnd, int len, int wid, int flg, char bar,
+		char xtraC, int bar_start);
 /*************USED************/
 int my_digit(char A);
 long int size_numb(long int numb, int size);
@@ -43,7 +43,7 @@ int print_reverse(va_list my_specs, char my_buff[], int flg,
 int print_rotstring(va_list my_specs, char my_buff[], int size,
 		int prcs, int wid, int flg);
 int print_ptr(va_list my_specs, char my_buff[],
-		int size, int wid, int prcs, int flg);
+		int flg, int wid, int prcs, int size);
 /***************FUNC***************/
 /*int printCharacter(va_list my_specs, char myBuffer[],
                 char* wid, int size, int prcs, int flg);*/
@@ -100,9 +100,10 @@ int modify_print(const char *fptr, int x, va_list my_argument,
 /************MODIFIEDPRINT********************/
 void printBuffer(char myBuffer[], int *my_buff);
 int printUnsigned(va_list my_specs, char my_buff[], int flg, int size,
-		int prcs,int wid);
-int print_hexa(va_list my_specs, char my_buff[], char map[], char flg_c,
-		int flg,int size, int prcs, int wid);
+		int prcs, int wid);
+
+int print_hexa(va_list my_specs, char map[],char my_buff[], int flg,
+		char flg_c, int wid, int prcs, int size);
 int printHexaUp(va_list my_specs, char my_buff[], int flg, int size, int prcs,
 		int wid);
 int printOctal(va_list my_specs, char my_buff[], int flg, int size, int prcs,
