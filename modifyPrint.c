@@ -11,8 +11,8 @@
  * @wid: Width
  * Return: Return positive value
  */
-int modify_print(const char *fptr, int mnd, va_list my_argument,
-		char myBuffer[], int flg, int prcs, int size, int wid)
+int modify_print(const char *fptr, int *mnd, va_list my_argument,
+		char myBuffer[], int flg, int wid, int prcs, int size)
 {
 	int x, fin_len = 0;
 	int my_chars = -1;

@@ -93,8 +93,6 @@ struct fptr
 typedef struct fptr fptr_t;
 
 int _printf(const char *format, ...);
-int modify_print(const char *fptr, int x, va_list my_argument,
-		char myBuffer[], int flg, int prcs, int wid, int size);
 
 
 /************MODIFIEDPRINT********************/
@@ -110,6 +108,8 @@ int printOctal(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
 		int size);
 int printHexa(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
 		int size);
+int modify_print(const char *fptr, int *mnd, va_list my_argument,
+		char myBuffer[], int flg, int wid, int prcs, int size);
 
 
 #endif
