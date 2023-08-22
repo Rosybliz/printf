@@ -107,8 +107,8 @@ int printHexaUp(va_list my_specs, char my_buff[], int flg, int size, int prcs,
  * @map: the --
  * Return: number of characters printed
  */
-int print_hexa(va_list my_specs, char my_buff[], char flg_c, char map[],
-		int flg, int size, int prcs, int wid)
+int print_hexa(va_list my_specs, char map[], char my_buff[], int flg,
+		char flg_c, int wid, int prcs, int size)
 {
 	int x = BUFF_SIZE - 2;
 	unsigned long int numb = va_arg(my_specs, unsigned long int);
