@@ -10,7 +10,8 @@ void printBuffer(char myBuffer[], int *my_buff);
 int _printf(const char *format, ...)
 {
 	int wid, prcs, flg, size, my_buff = 0;
-	int x, my_printed = 0;
+	int x = 0; 
+	int my_printed = 0;
 	int my_char = 0;
 	va_list my_argument;
 	char myBuffer[BUFF_SIZE];
@@ -19,7 +20,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	/*char myBuffer[BUFF_SIZE];[BUFF_SIZE]*/
 	va_start(my_argument, format);
-	x = 0;
+	
 	while (format && format[x] != '\0')
 	{
 		if (format[x] != '%')
@@ -37,7 +38,7 @@ int _printf(const char *format, ...)
 			prcs = print_prcs(format, &x, my_argument);
 			size = print_size(format, &x);
 			++x;
-			my_printed = modify_print(format, x, my_argument,
+			my_printed = modify_print(format, &x, my_argument,
 					myBuffer, flg, prcs, size, wid);
 			if (my_printed == -1)
 				return (-1);

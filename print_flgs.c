@@ -7,12 +7,12 @@
  */
 int print_flgs(const char *format, int *x)
 {
-	int z;
+	int z = 0;
 	int y;
 	int flg = 0;
 
 	const char flags[] = {'+', '-', '0', '#', ' ', '\0'};
-	const int flg_array[] = {SUB, ADD, ZERO, P_HASH, SPACE, 0};
+	const int flg_array[] = {ADD, SUB, ZERO, P_HASH, SPACE, 0};
 
 	y = *x + 1;
 	while (format[y] != '\0')

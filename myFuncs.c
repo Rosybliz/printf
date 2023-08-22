@@ -14,7 +14,7 @@ int printCharacter(va_list my_specs, char myBuffer[],
 {
 	char c = va_arg(my_specs, int);
 
-	return (write_no(c, myBuffer, flg, wid, prcs, size));
+	return (write_char(c, myBuffer, flg, wid, prcs, size));
 }
 
 /**

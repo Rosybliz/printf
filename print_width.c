@@ -9,7 +9,7 @@
 int print_width(const char *format, int *x, va_list my_argument)
 {
 	int y = *x + 1;
-	int wid;
+	int wid = 0;
 
 	while (format[y] != '\0')
 	{
@@ -26,6 +26,7 @@ int print_width(const char *format, int *x, va_list my_argument)
 		}
 		else
 			break;
+		y++;
 	}
 	*x = y - 1;
 	return (wid);

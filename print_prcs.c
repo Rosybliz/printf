@@ -13,6 +13,7 @@ int print_prcs(const char *format, int *x, va_list my_arguments)
 
 	if (format[y] != '.')
 		return (prcs);
+	prcs = 0;
 
 	for (y = y + 1; format[y] != '\0'; y++)
 	{
