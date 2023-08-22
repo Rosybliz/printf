@@ -54,6 +54,8 @@ int printPercent(va_list my_specs, char myBuffer[],
 int printCharacter(va_list my_specs, char myBuffer[],
                 char* wid, int size, int prcs, int flg);
 
+int printBinary(va_list my_specs, char my_buff[],
+		int wid, int size, int flg, int prcs);
 
 int print_flgs(const char *format, int *x);
 int print_size(const char *format, int *x);

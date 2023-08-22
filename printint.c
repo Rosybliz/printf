@@ -39,3 +39,52 @@ int int_print(va_list my_specs, char my_buff[],
 	x++;
 	return (write_no(is_neg, x, my_buff, flg, wid, prcs, size));
 }
+
+/**
+ * printBinary- a function that prints positive integers
+ * @my_specs: the variable list
+ * @my_buff: an array of characters
+ * @wid: width
+ * @size: size
+ * @flg: the flags
+ * @prcs: the precision
+ * Return: returns total number of characters printed
+ */
+
+int printBinary(va_list my_specs, char my_buff[],
+		int wid, int size, int flg, int prcs)
+{
+	unsigned int j, k, x, sum;
+	unsigned int b[32];
+	int count;
+
+	UNUSED(my_buff);
+	UNUSED(flg);
+	UNUSED(wid);
+	UNUSED(prcs);
+	UNUSED(size);
+
+	j = va_arg(my_specs, unsigned int);
+	k = 2147483648;
+	b[0] = j / k;
+
+	for (x = 1; x < 32; x++)
+	{
+		k /= 2;
+		b[x] = (j / k) % 2;
+	}
+	for (x = 0, sum = 0, count = 0; x < 32; x++)
+	{
+		sum = sum + b[x];
+		if (sum || x == 31)
+		{ 
+			char y = '0' + b[x];
+			write(1, &y, 1);
+			count++;
+		}
+	}
+	return (count);
+}
+
+
+
