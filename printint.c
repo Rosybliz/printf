@@ -12,7 +12,7 @@
  */
 
 int int_print(va_list my_specs, char my_buff[],
-		int wid, int size, int flg, int prcs)
+		int flg, int wid, int prcs, int size)
 {
 	int x = BUFF_SIZE - 2;
 	int is_neg = 0;
@@ -52,7 +52,7 @@ int int_print(va_list my_specs, char my_buff[],
  */
 
 int printBinary(va_list my_specs, char my_buff[],
-		int wid, int size, int flg, int prcs)
+		int flg, int wid, int prcs, int size)
 {
 	unsigned int j, k, x, sum;
 	unsigned int b[32];

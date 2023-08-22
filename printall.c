@@ -53,8 +53,8 @@ int print_ptr(va_list my_specs, char my_buff[],
  * @size: the size
  * Return: returns number of characters printed
  */
-int print_rotstring(va_list my_specs, char my_buff[], int size,
-		int prcs, int wid, int flg)
+int print_rotstring(va_list my_specs, char my_buff[], int flg,
+		int wid, int prcs, int size)
 {
 	char i;
 	unsigned int x, k;
@@ -107,7 +107,7 @@ int print_rotstring(va_list my_specs, char my_buff[], int size,
  * Return: returns number of characters printed
  */
 int print_reverse(va_list my_specs, char my_buff[], int flg,
-		int prcs, int wid, int size)
+		int wid, int prcs, int size)
 {
 	char *str;
 	int x;
@@ -148,7 +148,7 @@ int print_reverse(va_list my_specs, char my_buff[], int flg,
  * Return: returns number of characters printed
  */
 int print_unprintable(va_list my_specs, char my_buff[],
-		int flg, int prcs, int wid, int size)
+		int flg, int wid, int prcs, int size)
 {
 	int x = 0, offset = 0;
 	char *str = va_arg(my_specs, char *);

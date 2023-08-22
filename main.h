@@ -17,14 +17,14 @@
 #define UNUSED(x) (void)(x)
 /********* WRITES*************/
 
-int write_char(int c, char my_buff[], int flg,
-		int prcs, int size, int wid);
+int write_char(char c, char my_buff[], int flg,
+		int wid, int prc, int size);
 int write_unsignd(int is_neg, int pnd, char my_buff[], int flg,
-		int prcs, int wid, int size);
+		int wid, int prcs, int size);
 int write_numb(int pnd, char my_buff[], int flg,
-		int prcs, int len, char xtraC, char bar, int wid);
+		int wid, int prcs, int len, char bar, char xtraC);
 int write_no(int is_neg, int pnd, char my_buff[], int flg,
-		int prcs, int size, int wid);
+		int wid, int prcs, int size);
 int write_ptr(char my_buff[], int pnd, int len, int wid, int flg, char bar,
 		char xtraC, int bar_start);
 /*************USED************/
@@ -37,11 +37,11 @@ int is_print(char c);
 /**************PRINTALL***********/
 
 int print_unprintable(va_list my_specs, char my_buff[],
-		int flg, int prcs, int wid, int size);
+		int flg, int wid, int prcs, int size);
 int print_reverse(va_list my_specs, char my_buff[], int flg,
-		int prcs, int wid, int size);
-int print_rotstring(va_list my_specs, char my_buff[], int size,
-		int prcs, int wid, int flg);
+		int wid, int prcs, int size);
+int print_rotstring(va_list my_specs, char my_buff[], int flg,
+		int wid, int prcs, int size);
 int print_ptr(va_list my_specs, char my_buff[],
 		int flg, int wid, int prcs, int size);
 /***************FUNC***************/
@@ -53,14 +53,14 @@ int printPercent(va_list my_specs, char myBuffer[],
 		int wid, int size, int prcs, int flg);
 
 int printBinary(va_list my_specs, char my_buff[],
-		int wid, int size, int flg, int prcs);
+		int flg, int wid, int prcs, int size);
 
 int print_flgs(const char *format, int *x);
 int print_size(const char *format, int *x);
 int print_width(const char *format, int *x, va_list my_argument);
 int print_prcs(const char *format, int *x, va_list my_arguments);
 int int_print(va_list my_specs, char my_buff[],
-		int wid, int size, int flg, int prcs);
+		int flg, int wid, int prcs, int size);
 
 
 int _printf(const char *format, ...);

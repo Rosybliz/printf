@@ -10,7 +10,7 @@
  * @pnd: char types.
  */
 int write_no(int is_neg, int pnd, char my_buff[], int flg,
-		int prcs, int size, int wid)
+		int wid, int prcs, int size)
 {
 	int len = BUFF_SIZE - pnd - 1;
 	char bar = ' ', xtraC = 0;
@@ -40,7 +40,7 @@ int write_no(int is_neg, int pnd, char my_buff[], int flg,
  * Return: the number of characters printed
  */
 int write_numb(int pnd, char my_buff[], int flg,
-		int prcs, int len, char xtraC, char bar, int wid)
+		int wid, int prcs,int len, char bar, char xtraC)
 {
 	int x, bar_start = 1;
 
@@ -99,7 +99,7 @@ int write_numb(int pnd, char my_buff[], int flg,
  * Return: number of printed characters
  */
 int write_unsignd(int is_neg, int pnd, char my_buff[], int flg,
-		int prcs, int wid, int size)
+		int wid, int prcs, int size)
 {
 	int len = BUFF_SIZE - pnd - 1, x = 0;
 	char bar = ' ';
@@ -202,8 +202,8 @@ int write_ptr(char my_buff[], int pnd, int len,
  * @size: the size
  * Return: the number of characters printed
  */
-int write_char(int c, char my_buff[], int flg,
-		int prcs, int size, int wid)
+int write_char(char c, char my_buff[], int flg,
+		int wid, int prcs, int size)
 {
 	int x = 0;
 	char bar = ' ';
