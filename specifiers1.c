@@ -32,6 +32,7 @@ int print_specifiers(const char *format, ...)
 				case 'i':
 				{
 					int variadic5 = va_arg(argument_list, int);
+					write(1, &variadic5, 1);
 					my_argument++;
 					break;
 				}
