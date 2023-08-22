@@ -12,7 +12,7 @@ int print_flgs(const char *format, int *x)
 	int flg = 0;
 
 	const char flags[] = {'+', '-', '0', '#', ' ', '\0'};
-	const int flg_array[] = {SUB, ADD, ZERO, P_HASH, P_VOID, 0};
+	const int flg_array[] = {SUB, ADD, ZERO, P_HASH, SPACE, 0};
 
 	y = *x + 1;
 	while (format[y] != '\0')

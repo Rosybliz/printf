@@ -10,11 +10,11 @@
  * Return: Return number of character printed
  */
 int printCharacter(va_list my_specs, char myBuffer[],
-		int wid, int size, int prcs, int flg)
+		char* wid, int size, int prcs, int flg)
 {
 	char c = va_arg(my_specs, int);
 
-	return (write(1, myBuffer, wid, size, prcs, flg, 1));
+	return (write_no(c, *myBuffer, wid, size, prcs, flg, 1));
 }
 
 /**
@@ -33,11 +33,11 @@ int printString(va_list my_specs, char myBuffer[],
 	int my_len = 0;
 	char *ptr = va_arg(my_specs, char*);
 
-	void(myBuffer);
-	void(flg);
-	void(wid);
-	void(prcs);
-	void(size);
+	UNUSED(myBuffer);
+	UNUSED(flg);
+	UNUSED(wid);
+	UNUSED(prcs);
+	UNUSED(size);
 
 	if (ptr == NULL)
 	{
@@ -51,10 +51,12 @@ int printString(va_list my_specs, char myBuffer[],
 		prcs = my_len;
 	if (my_len < wid)
 	{
+		int x;
+
 		if (SUB && flg)
 		{
 			write(1, &ptr[0], my_len);
-			int x = wid - my_len;
+			x = wid - my_len;
 
 			while (x > 0)
 				x--;
@@ -86,12 +88,12 @@ int printString(va_list my_specs, char myBuffer[],
 int printPercent(va_list my_specs, char myBuffer[],
 		int wid, int size, int prcs, int flg)
 {
-	void(my_specs);
-	void(myBuffer);
-	void(wid);
-	void(size);
-	void(prcs);
-	void(flg);
+	UNUSED(my_specs);
+	UNUSED(myBuffer);
+	UNUSED(wid);
+	UNUSED(size);
+	UNUSED(prcs);
+	UNUSED(flg);
 
 	return (write(1, "%%", 1));
 }
