@@ -10,7 +10,7 @@
  * Return: returns number of characters printed
  */
 int print_ptr(va_list my_specs, char my_buff[],
-		int size, int wid, int prcs, int flg)
+		int flg, int wid, int prcs, int size)
 {
 	char xtraC = 0, bar = ' ';
 	int pnd = BUFF_SIZE - 2, len = 2, bar_start = 1;
@@ -20,10 +20,12 @@ int print_ptr(va_list my_specs, char my_buff[],
 
 	UNUSED(wid);
 	UNUSED(size);
-	UNUSED(prcs);
+
 	if (address == NULL)
 		return (write(1, "(nil)", 5));
 	my_buff[BUFF_SIZE - 1] = '\0';
+	UNUSED(prcs);
+
 	num_a = (unsigned long)address;
 	while (num_a > 0)
 	{
@@ -38,7 +40,7 @@ int print_ptr(va_list my_specs, char my_buff[],
 	else if (flg & SPACE)
 		xtraC = ' ', len++;
 	pnd++;
-	return (write_ptr(my_buff, pnd, len, bar, wid, bar, xtraC, bar_start));
+	return (write_ptr(my_buff, pnd, len, wid, flg, bar, xtraC, bar_start));
 }
 
 /**

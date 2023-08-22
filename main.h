@@ -43,7 +43,7 @@ int print_reverse(va_list my_specs, char my_buff[], int flg,
 int print_rotstring(va_list my_specs, char my_buff[], int size,
 		int prcs, int wid, int flg);
 int print_ptr(va_list my_specs, char my_buff[],
-		int size, int wid, int prcs, int flg);
+		int flg, int wid, int prcs, int size);
 /***************FUNC***************/
 int printCharacter(va_list my_specs, char myBuffer[],
 		int wid, int size, int prcs, int flg);
@@ -96,9 +96,9 @@ int modify_print(const char *fptr, int mnd, va_list my_argument,
 /************MODIFIEDPRINT********************/
 void printBuffer(char myBuffer[], int *my_buff);
 int printUnsigned(va_list my_specs, char my_buff[], int flg, int size,
-		int prcs,int wid);
+		int prcs, int wid);
 int print_hexa(va_list my_specs, char my_buff[], char map[], char flg_c,
-		int flg,int size, int prcs, int wid);
+		int flg, int size, int prcs, int wid);
 int printHexaUp(va_list my_specs, char my_buff[], int flg, int size, int prcs,
 		int wid);
 int printOctal(va_list my_specs, char my_buff[], int flg, int size, int prcs,
