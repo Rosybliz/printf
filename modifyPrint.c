@@ -11,12 +11,12 @@
  * @wid: Width
  * Return: Return positive value
  */
-int modify_print(const char *fptr, int *mnd, va_list my_argument,
+/*int modify_print(const char *fptr, int *mnd, va_list my_argument,
 		char myBuffer[], int flg, int wid, int prcs, int size)
 {
 	int x, fin_len = 0;
 	int my_chars = -1;
-	/**
+	
 	UNUSED(my_argument);
 	UNUSED(myBuffer);
 	UNUSED(flg);
@@ -27,18 +27,18 @@ int modify_print(const char *fptr, int *mnd, va_list my_argument,
 	/*int x, fin_len = 0;*/
 	/*int my_chars = -1;*/
 
-	fptr_t fptr_types[] = {
+/*	fptr_t fptr_types[] = {
 		{'c', printCharacter}, {'s', printString}, {'%', printPercent},
 		{'i', int_print}, {'d', int_print}, {'b', printBinary},
 		{'u', printUnsigned}, {'o', printOctal}, {'x', printHexa},
 		{'X', printHexaUp}, {'p', print_ptr}, {'S', print_unprintable},
 
 		{'r', print_reverse}, {'R', print_rotstring}, {'\0', NULL}
-	};
+	};*/
 	/*int x = 0;*/
 	/*int fin_len =0;*/
 
-	for (x = 0; fptr_types[x].fptr != '\0'; x++)
+	/*for (x = 0; fptr_types[x].fptr != '\0'; x++)
 		if (fptr[*mnd] == fptr_types[x].fptr)
 		{
 			return (fptr_types[x].fn(my_argument, myBuffer,
@@ -64,4 +64,4 @@ int modify_print(const char *fptr, int *mnd, va_list my_argument,
 		return (fin_len);
 	}
 	return (my_chars);
-}
+}*/

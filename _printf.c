@@ -9,30 +9,37 @@ void printBuffer(char myBuffer[], int *my_buff);
  */
 int _printf(const char *format, ...)
 {
-	int wid, prcs, flg, size, my_buff = 0;
-	int x = 0; 
-	int my_printed = 0;
+	/*int wid, prcs, flg, size,int my_buff = 0;*/
+	/*int x = 0; 
+	int my_printed = 0;*/
 	int my_char = 0;
 	va_list my_argument;
-	char myBuffer[BUFF_SIZE];
+	/*char myBuffer[BUFF_SIZE];*/
 
 	if (format ==  NULL)
 		return (-1);
 	/*char myBuffer[BUFF_SIZE];[BUFF_SIZE]*/
 	va_start(my_argument, format);
 	
-	while (format && format[x] != '\0')
+	while (*format != '\0')
 	{
-		if (format[x] != '%')
+		if (*format != '%')
 		{
-			myBuffer[my_buff++] = format[x];
+			/*myBuffer[my_buff++] = *format;
 			if (my_buff == BUFF_SIZE)
-				printBuffer(myBuffer, &my_buff);
-			my_char++;
+				printBuffer(myBuffer, &my_buff);*/
+			my_char += write(1, format, 1);
+			format++;
 		}
 		else
 		{
-			printBuffer(myBuffer, &my_buff);
+			if (*(format + 1) == 'c')
+			{
+				printCharacter(&my_argument);
+				format += 2;
+				my_char++;
+			}
+			/*printBuffer(myBuffer, &my_buff);
 			flg = print_flgs(format, &x);
 			wid = print_width(format, &x, my_argument);
 			prcs = print_prcs(format, &x, my_argument);
@@ -42,11 +49,11 @@ int _printf(const char *format, ...)
 					myBuffer, flg, prcs, size, wid);
 			if (my_printed == -1)
 				return (-1);
-			my_char += my_printed;
+			my_char += my_printed;*/
 		}
-		x++;
+		/*x++;*/
 	}
-	printBuffer(myBuffer, &my_buff);
+	/*printBuffer(myBuffer, &my_buff);*/
 	va_end(my_argument);
 	return (my_char);
 }

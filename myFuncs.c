@@ -9,12 +9,11 @@
  * @flg: Handles the flags
  * Return: Return number of character printed
  */
-int printCharacter(va_list my_specs, char myBuffer[],
-		int flg, int wid, int prcs, int size)
+int printCharacter(va_list *my_specs)
 {
-	char c = va_arg(my_specs, int);
+	char c = va_arg(*my_specs, int);
 
-	return (write_char(c, myBuffer, flg, wid, prcs, size));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -38,7 +37,6 @@ int printString(va_list my_specs, char myBuffer[],
 	UNUSED(wid);
 	UNUSED(prcs);
 	UNUSED(size);
-
 	if (ptr == NULL)
 	{
 		ptr = "(null)";

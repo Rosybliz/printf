@@ -68,8 +68,7 @@ int _printf(const char *format, ...);
 
 
 /************MYFUNCS*************/
-int printCharacter(va_list my_specs, char myBuffer[],
-		int wid, int size, int prcs, int flg);
+int printCharacter(va_list *my_specs);
 int printString(va_list my_specs, char myBuffer[],
 		int wid, int size, int prcs, int flg);
 int printPercent(va_list my_specs, char myBuffer[],
@@ -93,7 +92,8 @@ struct fptr
 typedef struct fptr fptr_t;
 
 int _printf(const char *format, ...);
-
+int modify_print(const char *fptr, int *mnd, va_list my_argument,
+                char myBuffer[], int flg, int wid, int prcs, int size);
 
 /************MODIFIEDPRINT********************/
 void printBuffer(char myBuffer[], int *my_buff);
@@ -108,8 +108,8 @@ int printOctal(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
 		int size);
 int printHexa(va_list my_specs, char my_buff[], int flg, int wid, int prcs,
 		int size);
-int modify_print(const char *fptr, int *mnd, va_list my_argument,
-		char myBuffer[], int flg, int wid, int prcs, int size);
+/*int modify_print(const char *fptr, int *mnd, va_list my_argument,
+		char myBuffer[], int flg, int wid, int prcs, int size);*/
 
 
 #endif
